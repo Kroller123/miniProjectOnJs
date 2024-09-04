@@ -8,31 +8,34 @@ fetch(url).then(res => res.json())
             if (user.id % 2 !== 0) {
                 let userDiv = document.createElement('div')
                 let p = document.createElement('p')
-                let detailsOfUser = document.createElement('a')
+                let detailsOfUser = document.createElement('button')
 
 
 
                 p.innerHTML = `<b>${user.id}</b> - <b>${user.name}</b>`
 
 
-                detailsOfUser.innerText = 'user details'
-                detailsOfUser.href = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                detailsOfUser.innerHTML = `<b>user details</b>`
 
+                detailsOfUser.addEventListener('click', function (){
+                    document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                })
                 userDiv.append(p,detailsOfUser)
 
                 leftDiv.appendChild(userDiv)
             }else {
                 let userDiv = document.createElement('div')
                 let p = document.createElement('p')
-                let detailsOfUser = document.createElement('a')
+                let detailsOfUser = document.createElement('button')
 
 
 
                 p.innerHTML = `<b>${user.id}</b> - <b>${user.name}</b>`
+                detailsOfUser.innerHTML = `<b>user details</b>`
 
-
-                detailsOfUser.innerText = 'user details'
-                detailsOfUser.href = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                detailsOfUser.addEventListener('click', function (){
+                    document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                })
 
                 userDiv.append(p,detailsOfUser)
 
