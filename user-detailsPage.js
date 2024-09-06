@@ -1,6 +1,6 @@
 
 
-//      Этот способ которому нас не учили //
+//      Этот второй метод //
 
 
 // let url = new URL(location.href)
@@ -52,7 +52,7 @@ fetch(postURL).then(js => js.json())
                     button.innerText = 'More info of post'
 
 
-                    //      Этот способ которому нас не учили //
+                    //      Этот второй метод //
 
 
                     // button.addEventListener('click', function () {

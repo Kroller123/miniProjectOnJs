@@ -18,7 +18,7 @@ fetch(url).then(res => res.json())
                 detailsOfUser.innerHTML = `<b>user details</b>`
 
 
-                //      Этот способ которому нас не учили //
+                //      Этот второй метод //
 
 
                 // detailsOfUser.addEventListener('click', function (){
@@ -45,7 +45,9 @@ fetch(url).then(res => res.json())
                 detailsOfUser.innerHTML = `<b>user details</b>`
 
 
-                //      Этот способ которому нас не учили //
+
+
+                //      Этот второй метод //
 
                 // detailsOfUser.addEventListener('click', function (){
                 //     document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
