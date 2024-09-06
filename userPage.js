@@ -17,8 +17,19 @@ fetch(url).then(res => res.json())
 
                 detailsOfUser.innerHTML = `<b>user details</b>`
 
+
+                //      Этот способ которому нас не учили //
+
+
+                // detailsOfUser.addEventListener('click', function (){
+                //     document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                // })
+
+
+
                 detailsOfUser.addEventListener('click', function (){
-                    document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                    document.location = 'user-detailsPage.html'
+                    localStorage.setItem('user', JSON.stringify(user))
                 })
                 userDiv.append(p,detailsOfUser)
 
@@ -33,8 +44,21 @@ fetch(url).then(res => res.json())
                 p.innerHTML = `<b>${user.id}</b> - <b>${user.name}</b>`
                 detailsOfUser.innerHTML = `<b>user details</b>`
 
+
+                //      Этот способ которому нас не учили //
+
+                // detailsOfUser.addEventListener('click', function (){
+                //     document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                // })
+
+
+
+
+
+
                 detailsOfUser.addEventListener('click', function (){
-                    document.location = `user-detailsPage.html?value=${JSON.stringify(user)}`
+                    document.location = 'user-detailsPage.html'
+                    localStorage.setItem('user', JSON.stringify(user))
                 })
 
                 userDiv.append(p,detailsOfUser)

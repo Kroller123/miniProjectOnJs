@@ -1,6 +1,17 @@
-let url = new URL (location.href)
-let parseUser = JSON.parse(url.searchParams.get('value'));
+
+
+//      Этот способ которому нас не учили //
+
+
+// let url = new URL(location.href)
+//
+// let parseUser = JSON.parse(url.searchParams.get('value'))
+//
+
+
+let parseUser = JSON.parse(localStorage.getItem('user'));
 let ul = document.querySelector('#user_details')
+console.log(parseUser)
 
 
 
@@ -23,7 +34,9 @@ function userBuilder(user,tag) {
 let button = document.querySelector('#btn')
 let divMain = document.querySelector('#div_main')
 
-fetch(`https://jsonplaceholder.typicode.com/users/${parseUser.id}/posts`).then(js => js.json())
+let postURL = `https://jsonplaceholder.typicode.com/users/${parseUser.id}/posts`
+
+fetch(postURL).then(js => js.json())
     .then(posts => {
         let click = false
         button.onclick = function () {
@@ -38,8 +51,20 @@ fetch(`https://jsonplaceholder.typicode.com/users/${parseUser.id}/posts`).then(j
                     let button = document.createElement('button')
                     button.innerText = 'More info of post'
 
+
+                    //      Этот способ которому нас не учили //
+
+
+                    // button.addEventListener('click', function () {
+                    //     document.location = `post-of-user.html?value=${JSON.stringify(post)}`
+                    // })
+
+
+
+
                     button.addEventListener('click', function () {
-                        document.location = `post-of-user.html?value=${JSON.stringify(post)}`
+                        document.location = 'post-of-user.html'
+                        localStorage.setItem('post',JSON.stringify(post))
                     })
 
                     div.append(p, button)
